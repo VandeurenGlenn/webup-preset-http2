@@ -1,8 +1,9 @@
 var chai = require('chai');
 var assert = chai.assert;
 var http2 = require('./../dist/http2-node');
+var normalize = require('path').normalize;
 
-var preset = http2({dest: 'build'});
+var preset = http2({dest: 'build', prefix: 'build/unbundled'});
 var keys = ['dest', 'inlineJs', 'inlineCss', 'plugins'];
 
 describe('description', () => {
@@ -19,6 +20,10 @@ describe('description', () => {
 
   it('preset[0] contains all keys', () => {
     assert.hasAllKeys(preset[0], keys, keys);
+  });
+
+  it('returns the expected path', () => {
+    assert.equal(preset[0].dest, normalize('build/unbundled/build'));
   });
 
 });

@@ -1,6 +1,6 @@
 {
   "name": "webup-preset-http2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/http2-node.js",
   "module": "dist/http2-es.js",
   "keywords": [
